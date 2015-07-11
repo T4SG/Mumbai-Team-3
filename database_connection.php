@@ -7,7 +7,7 @@ DEFINE('DATABASE_NAME', 'impact');
 
 
 // Make the connection:
-$dbc =mysql_connect(DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD,
+$dbc =mysqli_connect(DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD,
     DATABASE_NAME);
 if (!$dbc) {
     echo "<br>connection error<br>";
