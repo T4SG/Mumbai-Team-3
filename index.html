@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+include('header.php');
+include('data_con.php');
+?>
 <head>
 
     <meta charset="utf-8">
@@ -317,7 +321,15 @@
                 </div>
             </div>
             <!-- /.row -->
-            
+        <?php
+                $sql="SELECT * FROM hhf";
+                $result = $conn->query($sql);
+                while($row = $result->fetch_assoc()) {
+                echo($row['region']);
+                echo('<br>');
+                echo($row['no_of_schools']);
+                }
+        ?>    
                     
                       
                     <!-- /.panel -->
@@ -336,7 +348,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Date</th>
-                                                    <th>Time</th>
+                                                    <th>Number of schools</th>
                                                     <th>Amount</th>
                                                 </tr>
                                             </thead>
