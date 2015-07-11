@@ -1,9 +1,9 @@
 <?php
 
-DEFINE('DATABASE_USER', 'user');
-DEFINE('DATABASE_PASSWORD', '');
-DEFINE('DATABASE_HOST', 'localhost');
-DEFINE('DATABASE_NAME', 'implementation');
+DEFINE('DATABASE_USER', 'root');
+DEFINE('DATABASE_PASSWORD', 'code4good');
+DEFINE('DATABASE_HOST', 'ec2-52-69-94-146.ap-northeast-1.compute.amazonaws.com');
+DEFINE('DATABASE_NAME', 'impact');
 date_default_timezone_set('UTC');
 
 // Make the connection:
