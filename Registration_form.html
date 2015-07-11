@@ -29,6 +29,54 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+
+
+    <script>
+
+function ValidateForm()
+{
+        var name1 = document.regform.uname;
+        var instid = document.regform.institute_id; 
+        var email = document.regform.email;
+        var userid  = document.regform.user_id;
+        var password  = document.regform.password;
+
+        if(name1.value == "")
+        {
+        alert("Please enter name ");
+        name1.focus();
+        return false;
+        }
+        if(instid.value == "")
+        {
+        alert("Please enter Institute ID");
+        instid.focus();
+        return false;
+        }
+        if(userid.value == "")
+        {
+        alert("Please enter User ID ");
+        userid.focus();
+        return false;
+        }
+        if(email.value == "" || email.value.indexOf("@" , 0) < 0 || email.value.indexOf("." , 0) < 0)
+        {
+        alert("Please enter valid email id ");
+        email.focus();
+        return false;
+        }
+        if(password.value == "")
+        {
+        alert("Please enter pasword ");
+        password.focus();
+        return false;
+        }
+        return true;
+        }
+
+</script>
+
 
 </head>
 
@@ -384,29 +432,29 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form role="form" method="post" name="regform" onsubmit="return ValidateForm()" >
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="uname">
                                         </div>
                                          <div class="form-group">
                                             <label>Institute ID</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="institute_id">
                                         </div>
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="email">
                                         </div>
                                         <div class="form-group">
                                             <label>User ID</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="user_id">
                                         </div>
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="password">
                                         </div>
                                         <br>
-                                        <button type="submit" class="btn btn-default">Register</button>
+                                        <button type="submit" class="btn btn-default" onsubmit="return ValidateForm();">Register</button>
                                     
                                     </form>
                                 </div>
