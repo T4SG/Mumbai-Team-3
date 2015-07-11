@@ -1,0 +1,46 @@
+
+<html>
+	<head>
+		<title>Pie Chart</title>
+		<script src="..\js\pie.js"></script>
+	</head>
+	<body>
+		<div id="canvas-holder">
+			<canvas id="chart-area" width="300" height="300"/>
+		</div>
+
+
+	<script>
+
+		var pieData = [
+				{
+					value: 44.0972222222,
+					color:"#949FB1",
+					highlight: "#A8B3C5",
+					label: "Positive"
+				},
+				{
+					value: 19.0972222222,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Negative"
+				},
+				{
+					value: 36.8055555556,
+					color: "#4DB45C",
+					highlight: "#FFC870",
+					label: "Neutral"
+				},
+
+			];
+
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myPie = new Chart(ctx).Pie(pieData);
+			};
+
+
+
+	</script>
+	</body>
+</html>
