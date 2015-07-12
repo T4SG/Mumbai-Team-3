@@ -424,14 +424,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <!-- Start WOWSlider.com BODY section -->
 	<div id="wowslider-container1">
 	<div class="ws_images">
-<a href="#"><img src="data1/images/chrysanthemum.jpg" alt="Chrysanthemum" title="Chrysanthemum" id="wows0"/>ergergergrergrgrggrgregergerg</a>
-<a href="#"><img src="data1/images/desert.jpg" alt="Desert" title="Desert" id="wows1"/>gegergergergergerg</a>
-<a href="#"><img src="data1/images/jellyfish.jpg" alt="Jellyfish" title="Jellyfish" id="wows2"/>regergergerggergergreg</a>
+<a href="#"><img src="data1/images/petra1.jpg" alt="" title="" id="wows0"/>Thousands of kids educated</a>
+<a href="#"><img src="data1/images/petra2.jpg" alt="" title="" id="wows1"/>Millions of lives impacted</a>
+<a href="#"><img src="data1/images/petra3.jpg" alt="" title="" id="wows2"/>regergergerggergergreg</a>
+<a href="#"><img src="data1/images/petra4.jpg" alt="" title="" id="wows3"/>regergergerggergergreg</a>
+<a href="#"><img src="data1/images/petra5.jpg" alt="" title="" id="wows4"/>regergergerggergergreg</a>
 </div>
 <div class="ws_bullets"><div>
-<a href="#wows0" title="Chrysanthemum"><img src="data1/tooltips/chrysanthemum.jpg" alt="Chrysanthemum"/>1</a>
-<a href="#wows1" title="Desert"><img src="data1/tooltips/desert.jpg" alt="Desert"/>2</a>
-<a href="#wows2" title="Jellyfish"><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
+<a href="#wows0" title=""><img src="data1/tooltips/chrysanthemum.jpg" alt="Chrysanthemum"/>1</a>
+<a href="#wows1" title=""><img src="data1/tooltips/desert.jpg" alt="Desert"/>2</a>
+<a href="#wows2" title=""><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
+<a href="#wows3" title=""><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
+<a href="#wows4" title=""><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
 </div></div>
 <a style="display:none" href="http://wowslider.com">jQuery Image Slider Vertical by WOWSlider.com v1.7</a>
 	</div>
@@ -443,78 +447,81 @@ google.maps.event.addDomListener(window, 'load', initialize);
             
         <?php
 
- include ("database_connection.php");
+// include ("database_connection.php");
  include ("data_con.php");
-              /*  $tabs=array();
+               $tabs=array();
     $sql="SELECT distinct year FROM school";
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
     $tabs[]=$row['year'];
-}*/
-                
+}
+            for($i=0;$i<count($tabs);$i++){
+                echo("$tabs[$i]");
+                echo('<br>');
+            }    
 
                  $sql="select count(*) from school where year='2007' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total=$row3['count(*)'];
-        echo("2007");
-        echo($total);
+        //echo("2007");
+        //echo($total);
 
          $sql="select count(*) from school where year='2008' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total1=$row3['count(*)'];
-        echo("2008");
-        echo($total1);
+        //echo("2008");
+        //echo($total1);
 
          $sql="select count(*) from school where year='2009' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total2=$row3['count(*)'];
-        echo("2009");
-        echo($total2);
+        //echo("2009");
+        //echo($total2);
 
          $sql="select count(*) from school where year='2010' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total3=$row3['count(*)'];
-        echo("2010");
-        echo($total3);
+        //echo("2010");
+        //echo($total3);
 
          $sql="select count(*) from school where year='2011' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total4=$row3['count(*)'];
-        echo("2011");
-        echo($total4);
+        //echo("2011");
+        //echo($total4);
 
         $sql="select count(*) from school where year='2012' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total5=$row3['count(*)'];
-        echo("2012");
-        echo($total5);
+        //echo("2012");
+        //echo($total5);
 
         $sql="select count(*) from school where year='2013' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total6=$row3['count(*)'];
-        echo("2013");
-        echo($total6);
+        //echo("2013");
+        //echo($total6);
 
         $sql="select count(*) from school where year='2014' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total7=$row3['count(*)'];
-        echo("2014");
-        echo($total7);
+        //echo("2014");
+        //echo($total7);
         
         $sql="select count(*) from school where year='2015' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total8=$row3['count(*)'];
-        echo("2015");
-        echo($total8);
+        //echo("2015");
+        //echo($total8);
 
                 
 ?>
