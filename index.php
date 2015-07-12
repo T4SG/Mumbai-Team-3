@@ -39,6 +39,103 @@ session_start();
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    
+    <!--START OF SLIDER-->
+	 
+    <!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+     
+<!--END OF SLIDER-->
+
+<!-- START OF JS FOR MAP -->
+
+	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+        
+    <script>
+function initialize() {
+  var myLatlng2 = new google.maps.LatLng(15.085748, 18.910782);
+  
+  var myLatlng = new google.maps.LatLng(-4.172052, 123.815644);
+  var myLatlng1 = new google.maps.LatLng(18.561122,-72.344810);/*haiti*/
+  var myLatlng3 = new google.maps.LatLng(39.541770, -119.485645);
+  var myLatlng4 = new google.maps.LatLng(19.435742, -99.186871);/*mexico*/
+  var myLatlng5 = new google.maps.LatLng(3.767743, -73.173612);/*columbia*/
+  var myLatlng6 = new google.maps.LatLng(-10.947476, -75.957213);/*peru*/
+  var myLatlng7 = new google.maps.LatLng(-26.942269, -70.353456);/*chile*/
+  var myLatlng8 = new google.maps.LatLng(15.826139, 101.226432);/*thailand*/
+  var myLatlng9 = new google.maps.LatLng(12.364022, 123.764332);/*philli*/
+  var mapOptions = {
+    zoom: 2,
+    center: myLatlng2
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng1,
+      map: map,
+      title: 'Haiti'
+  });
+  
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Indonesia'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng3,
+      map: map,
+      title: 'USA'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng4,
+      map: map,
+      title: 'Mexico'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng5,
+      map: map,
+      title: 'Colombia'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng6,
+      map: map,
+      title: 'Peru'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng7,
+      map: map,
+      title: 'Chile'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng8,
+      map: map,
+      title: 'Thailand'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng9,
+      map: map,
+      title: 'Philippines'
+  });
+  
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+<!-- END OF JS FOR MAP -->
 
 </head>
 
@@ -321,6 +418,29 @@ session_start();
                 </div>
             </div>
             <!-- /.row -->
+            
+            <!-- START OF SLIDER CODE-->
+            
+              <!-- Start WOWSlider.com BODY section -->
+	<div id="wowslider-container1">
+	<div class="ws_images">
+<a href="#"><img src="data1/images/chrysanthemum.jpg" alt="Chrysanthemum" title="Chrysanthemum" id="wows0"/>ergergergrergrgrggrgregergerg</a>
+<a href="#"><img src="data1/images/desert.jpg" alt="Desert" title="Desert" id="wows1"/>gegergergergergerg</a>
+<a href="#"><img src="data1/images/jellyfish.jpg" alt="Jellyfish" title="Jellyfish" id="wows2"/>regergergerggergergreg</a>
+</div>
+<div class="ws_bullets"><div>
+<a href="#wows0" title="Chrysanthemum"><img src="data1/tooltips/chrysanthemum.jpg" alt="Chrysanthemum"/>1</a>
+<a href="#wows1" title="Desert"><img src="data1/tooltips/desert.jpg" alt="Desert"/>2</a>
+<a href="#wows2" title="Jellyfish"><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
+</div></div>
+<a style="display:none" href="http://wowslider.com">jQuery Image Slider Vertical by WOWSlider.com v1.7</a>
+	</div>
+	<script type="text/javascript" src="engine1/script.js"></script>
+	<!-- End WOWSlider.com BODY section -->
+           
+            
+            <!-- END OF SLIDER CODE-->
+            
         <?php
 
  include ("database_connection.php");
@@ -477,6 +597,10 @@ session_start();
              </div>
          </div>
      </div>
+     
+     <div id="map-canvas"></div>
+     
+     
     </div>
     <!-- /#wrapper -->
 
