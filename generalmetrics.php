@@ -384,22 +384,55 @@
 	<div id="graph">Loading graph...
     	
     </div>
+<?php
+
+                                                include ("data_con.php");
+                                                
+                                                $boys=array();
+                                                    $girls=array();
+                                                $tabs=array();
+                                                    $sql="SELECT distinct year FROM school";
+                                                    $result = $conn->query($sql);
+                                                    while($row = $result->fetch_assoc()) {
+                                                    $tabs[]=$row['year'];    
+                                                }
+                                                sort($tabs);
+                                                    
+                                                        for($i=0;$i<count($tabs);$i++){
+                                                            $yr=$tabs[$i];
+                                                            $boys[$i]=0;
+                                                            $girls[$i]=0;
+                                                        $sql="select * from school where year='$yr' ";
+                                                        //echo($sql);
+                                                        $result=$conn->query($sql);
+                                                        while($row = $result->fetch_assoc()) {
+                                                    $boys[$i]=$boys[$i]+$row['no_of_boys'];
+                                                        $girls[$i]=$girls[$i]+$row['no_of_girls'];    
+                                                }
+                                                        
+                                                
+                                                    }
+                                                    ?>
 
 <script type="text/javascript">
 	var myChart = new JSChart('graph', 'line');
-	myChart.setDataArray([[2, 10],[4, 20],[6, 30],[8, 45],[10, 50]], 'blue');
-	myChart.setDataArray([[2, 12],[4, 25],[6, 30],[8, 50],[10, 60]], 'green');
+	myChart.setDataArray([[2,<?php echo("$boys[0]");  ?>],[4,<?php echo("$boys[1]");  ?>],[6,<?php echo("$boys[2]");  ?>],[8,<?php echo("$boys[3]");  ?>],[10, <?php echo("$boys[4]");  ?>],[12,<?php echo("$boys[5]");  ?>],[14,<?php echo("$boys[6]");  ?>],[16,<?php echo("$boys[7]");  ?>],[18,<?php echo("$boys[8]");  ?>]], 'blue');
+	myChart.setDataArray([[2,<?php echo("$girls[0]");  ?>],[4,<?php echo("$girls[1]");  ?>],[6,<?php echo("$girls[2]");  ?>],[8,<?php echo("$girls[3]");  ?>],[10, <?php echo("$girls[4]");  ?>],[12,<?php echo("$girls[5]");  ?>],[14,<?php echo("$girls[6]");  ?>],[16,<?php echo("$girls[7]");  ?>],[18,<?php echo("$girls[8]");  ?>]], 'green');
 	
 	myChart.setAxisPaddingBottom(40);
 	myChart.setTextPaddingBottom(10);
-	myChart.setAxisValuesNumberY(11);
+	myChart.setAxisValuesNumberY(40);
 	myChart.setIntervalStartY(0);
-	myChart.setIntervalEndY(100);
+	myChart.setIntervalEndY(500);
 	myChart.setLabelX([2,'2007']);
 	myChart.setLabelX([4,'2008']);
 	myChart.setLabelX([6,'2009']);
 	myChart.setLabelX([8,'2010']);
 	myChart.setLabelX([10,'2011']);
+    myChart.setLabelX([12,'2012']);
+    myChart.setLabelX([14,'2013']);
+    myChart.setLabelX([16,'2014']);
+    myChart.setLabelX([18,'2015']);
 	myChart.setAxisValuesNumberX(5);
 	myChart.setShowXValues(false);
 	myChart.setTitleColor('#454545');
@@ -438,12 +471,13 @@
                                                     <th>Number of Boys</th>
                                                     <th>Number of Girls</th>
                                                     <th>Total Students</th>
-                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
+
                                                 include ("data_con.php");
+                                                echo("Hello");
                                                 $boys=array();
                                                     $girls=array();
                                                 $tabs=array();
@@ -502,7 +536,8 @@
 <div id="graph1">Loading graph...</div>
 
 <script type="text/javascript">
-    var myData = new Array([2005, 22], [2006, 36], [2007, 37], [2008, 45], [2009, 50], [2010, 55], [2011, 61], [2012, 61], [2013, 62], [2014, 66], [2015, 73]);
+    //var myData = new Array([2005, 22], [2006, 36], [2007, 37], [2008, 45], [2009, 50], [2010, 55], [2011, 61], [2012, 61], [2013, 62], [2014, 66], [2015, 73]);
+    var myData = new Array([2007,<?php $total=$boys[0]+$girls[0];echo("$total");?>], [2008,<?php $total=$boys[1]+$girls[1];echo("$total");?>], [2009, <?php $total=$boys[2]+$girls[2];echo("$total");?>], [2010, <?php $total=$boys[3]+$girls[3];echo("$total");?>], [2011, <?php $total=$boys[4]+$girls[4];echo("$total");?>], [2012,<?php $total=$boys[5]+$girls[5];echo("$total");?>], [2013, <?php $total=$boys[6]+$girls[6];echo("$total");?>], [2014, <?php $total=$boys[7]+$girls[7];echo("$total");?>], [2015, <?php $total=$boys[8]+$girls[8];echo("$total");?>]);
     var myChart = new JSChart('graph1', 'line');
     myChart.setDataArray(myData);
     myChart.setTitle('No of students');

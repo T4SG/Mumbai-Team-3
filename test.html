@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{
+height: 250px;
+width: 250px;
+transition: width 1s, height 1s,transform 1s;
+transform: translate(150px,120px) rotate(50deg) scale(1.5,2) skew(30deg,20deg) rotateX(120deg) rotateY(130deg);
+}
+
+div{
+width:100px;
+height:100px;
+background-color:red;
+-webkit-animation: myfirst 5s;
+}
+div:hover{
+width:200px;
+height:200px;
+transform:rotate(180deg);
+}
+@-webkit-keyframes myfirst{
+0% {background: red;}
+25% {background: blue;}
+50% {background: yellow;}
+100% {background: green;}
+}
+</style>
+</head>
+<body>
+<div><br><br>
+maths is great
+<br><br>
+</div>
+</body>
+</html>
