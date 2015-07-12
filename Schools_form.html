@@ -29,6 +29,157 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<script>
+function ValidateForm()
+{
+    var school_id1 = document.form1.school_id;
+    var report1 = document.form1.report; 
+    var school_name1 = document.form1.school_name;
+    var school_address1 = document.form1.school_address;
+    var region1 = document.form1.region;
+    var country1 = document.form1.country;
+    var number_of_girls1 = document.form1.number_of_girls;
+    var number_of_boys1 = document.form1.number_of_boys;
+    var number_of_teachers1= document.form1.number_of_teachers;
+    var literacy_rate1 = document.form1.literacy_rate;
+    var computer_literacy1 = document.form1.computer_literacy;
+    var average_attendance1 = document.form1.average_attendance;
+    var books1 = document.form1.books;
+    var computers1 = document.form1.computers;
+    var smartphones1 = document.form1.smartphones;
+    var students1 = document.form1.students;
+    var literacy_rate_before1 = document.form1.literacy_rate_before;
+    var primary1 = document.form1.primary;
+    var secondary1 = document.form1.secondary;
+    var dropouts1 = document.form1.dropouts;
+    var area1 = document.form1.area;
+
+if(school_id1.value == "")
+{
+alert("Please enter school id ");
+school_id1.focus();
+return false;
+}
+if(report1.value == "")
+{
+alert("Please enter report ");
+report1.focus();
+return false;
+}
+if(school_name1.value == "")
+{
+alert("Please enter school name ");
+school_name1.focus();
+return false;
+}
+if(school_address1.value == "")
+{
+alert("Please enter school address ");
+school_address1.focus();
+return false;
+}
+if(region1.value == "")
+{
+alert("Please enter region ");
+region1.focus();
+return false;
+}
+if(number_of_boys1.value == "")
+{
+alert("Please enter number of boys ");
+number_of_boys1.focus();
+return false;
+}
+if(number_of_girls1.value == "")
+{
+alert("Please enter number of girls ");
+number_of_girls1.focus();
+return false;
+}
+
+if(number_of_teachers1.value == "")
+{
+alert("Please enter number of teachers ");
+number_of_teachers1.focus();
+return false;
+}
+if(literacy_rate1.value == "")
+{
+alert("Please enter literacy rate ");
+literacy_rate1.focus();
+return false;
+}
+if(computer_literacy1.value == "")
+{
+alert("Please enter computer literacy ");
+computer_literacy1.focus();
+return false;
+}
+if(books1.value == "")
+{
+alert("Please enter books ");
+books1.focus();
+return false;
+}
+if(computers1.value == "")
+{
+alert("Please enter number of computers ");
+computers1.focus();
+return false;
+}
+if(smartphones1.value == "")
+{
+alert("Please enter number of smartphones ");
+smartphones1.focus();
+return false;
+}
+if(students1.value == "")
+{
+alert("Please enter number of students ");
+students1.focus();
+return false;
+}
+if(literacy_rate_before1.value == "")
+{
+alert("Please enter literacy rate before impact ");
+literacy_rate_before1.focus();
+return false;
+}
+if(primary1.value == "")
+{
+alert("Please enter number of primary students");
+primary1.focus();
+return false;
+}
+if(secondary1.value == "")
+{
+alert("Please enter number of secondary students ");
+secondary1.focus();
+return false;
+}
+if(dropouts1.value == "")
+{
+alert("Please enter dropouts ");
+dropouts1.focus();
+return false;
+}
+if(area1.value == "")
+{
+alert("Please enter area ");
+area1.focus();
+return false;
+}
+
+
+
+
+
+
+
+return true;
+}
+
+</script>
 
 </head>
 
@@ -384,93 +535,93 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form role="form" method="post" name="form1" onsubmit="return ValidateForm()">
                                         <div class="form-group">
                                             <label>School ID</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="school_id">
                                         </div>
                                          <div class="form-group">
                                             <label>Date of Report Submission</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="report">
                                         </div>
                                         <div class="form-group">
                                             <label>School Name</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="school_name">
                                         </div>
                                         <div class="form-group">
                                             <label>School Address</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="school_address">
                                         </div>
                                         <div class="form-group">
                                             <label>Region</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="region">
                                         </div>
                                         <div class="form-group">
                                             <label>Country</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="country">
                                         </div>
                                         <div class="form-group">
-                                            <label>Number of Girl</label>
-                                            <input class="form-control">
+                                            <label>Number of Girls</label>
+                                            <input class="form-control" name="number_of_girls">
                                         </div>
                                         <div class="form-group">
                                             <label>Number of boys </label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="number_of_boys">
                                         </div>
                                         <div class="form-group">
                                             <label>Number of Teachers</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="number_of_teachers">
                                         </div>
                                         <div class="form-group">
                                             <label>Current Literacy Rate of Region</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="literacy_rate">
                                         </div>
                                         <div class="form-group">
                                             <label>Computer Literacy of Region</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="computer_literacy">
                                         </div>
                                         <div class="form-group">
                                             <label>Average Attendence</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="average_attendance">
                                         </div>
                                         <div class="form-group">
                                             <label>Number of Books</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="books">
                                         </div>
                                         <div class="form-group">
                                             <label>Number of Computers</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="computers">
                                         </div>
                                         <div class="form-group">
                                             <label>Number of Smartphones</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="smartphones">
                                         </div>
                                         <div class="form-group">
                                             <label>Number of Students before Impact</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="students">
                                         </div>
                                         <div class="form-group">
                                             <label>Literacy Rate before Impact</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="literacy_rate_before">
                                         </div>
                                         <div class="form-group">
                                             <label>Total number of Primary Students</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="primary">
                                         </div>
                                         <div class="form-group">
                                             <label>Total number of Secondary Students</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="secondary">
                                         </div>
                                         <div class="form-group">
                                             <label>Yearly Dropouts</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="dropouts">
                                         </div>
                                         <div class="form-group">
                                             <label>Total Area of School Built</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="area">
                                         </div>
 
-                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <button type="submit" class="btn btn-default" onsubmit="return ValidateForm()">Submit</button>
                                     
                                     </form>
                                 </div>
