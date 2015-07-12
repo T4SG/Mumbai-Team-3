@@ -39,6 +39,103 @@ session_start();
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    
+    <!--START OF SLIDER-->
+	 
+    <!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+     
+<!--END OF SLIDER-->
+
+<!-- START OF JS FOR MAP -->
+
+	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+        
+    <script>
+function initialize() {
+  var myLatlng2 = new google.maps.LatLng(15.085748, 18.910782);
+  
+  var myLatlng = new google.maps.LatLng(-4.172052, 123.815644);
+  var myLatlng1 = new google.maps.LatLng(18.561122,-72.344810);/*haiti*/
+  var myLatlng3 = new google.maps.LatLng(39.541770, -119.485645);
+  var myLatlng4 = new google.maps.LatLng(19.435742, -99.186871);/*mexico*/
+  var myLatlng5 = new google.maps.LatLng(3.767743, -73.173612);/*columbia*/
+  var myLatlng6 = new google.maps.LatLng(-10.947476, -75.957213);/*peru*/
+  var myLatlng7 = new google.maps.LatLng(-26.942269, -70.353456);/*chile*/
+  var myLatlng8 = new google.maps.LatLng(15.826139, 101.226432);/*thailand*/
+  var myLatlng9 = new google.maps.LatLng(12.364022, 123.764332);/*philli*/
+  var mapOptions = {
+    zoom: 2,
+    center: myLatlng2
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng1,
+      map: map,
+      title: 'Haiti'
+  });
+  
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Indonesia'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng3,
+      map: map,
+      title: 'USA'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng4,
+      map: map,
+      title: 'Mexico'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng5,
+      map: map,
+      title: 'Colombia'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng6,
+      map: map,
+      title: 'Peru'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng7,
+      map: map,
+      title: 'Chile'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng8,
+      map: map,
+      title: 'Thailand'
+  });
+  
+  var marker = new google.maps.Marker({
+      position: myLatlng9,
+      map: map,
+      title: 'Philippines'
+  });
+  
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+<!-- END OF JS FOR MAP -->
 
 </head>
 
@@ -321,80 +418,110 @@ session_start();
                 </div>
             </div>
             <!-- /.row -->
+            
+            <!-- START OF SLIDER CODE-->
+            
+              <!-- Start WOWSlider.com BODY section -->
+	<div id="wowslider-container1">
+	<div class="ws_images">
+<a href="#"><img src="data1/images/petra1.jpg" alt="" title="" id="wows0"/>Thousands of kids educated</a>
+<a href="#"><img src="data1/images/petra2.jpg" alt="" title="" id="wows1"/>Millions of lives impacted</a>
+<a href="#"><img src="data1/images/petra3.jpg" alt="" title="" id="wows2"/>regergergerggergergreg</a>
+<a href="#"><img src="data1/images/petra4.jpg" alt="" title="" id="wows3"/>regergergerggergergreg</a>
+<a href="#"><img src="data1/images/petra5.jpg" alt="" title="" id="wows4"/>regergergerggergergreg</a>
+</div>
+<div class="ws_bullets"><div>
+<a href="#wows0" title=""><img src="data1/tooltips/chrysanthemum.jpg" alt="Chrysanthemum"/>1</a>
+<a href="#wows1" title=""><img src="data1/tooltips/desert.jpg" alt="Desert"/>2</a>
+<a href="#wows2" title=""><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
+<a href="#wows3" title=""><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
+<a href="#wows4" title=""><img src="data1/tooltips/jellyfish.jpg" alt="Jellyfish"/>3</a>
+</div></div>
+<a style="display:none" href="http://wowslider.com">jQuery Image Slider Vertical by WOWSlider.com v1.7</a>
+	</div>
+	<script type="text/javascript" src="engine1/script.js"></script>
+	<!-- End WOWSlider.com BODY section -->
+           
+            
+            <!-- END OF SLIDER CODE-->
+            
         <?php
 
- include ("database_connection.php");
+// include ("database_connection.php");
  include ("data_con.php");
-              /*  $tabs=array();
+               $tabs=array();
     $sql="SELECT distinct year FROM school";
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
     $tabs[]=$row['year'];
-}*/
-                
+}
+            for($i=0;$i<count($tabs);$i++){
+                echo("$tabs[$i]");
+                echo('<br>');
+            }    
 
                  $sql="select count(*) from school where year='2007' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total=$row3['count(*)'];
-        echo("2007");
-        echo($total);
+        //echo("2007");
+        //echo($total);
 
          $sql="select count(*) from school where year='2008' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total1=$row3['count(*)'];
-        echo("2008");
-        echo($total1);
+        //echo("2008");
+        //echo($total1);
 
          $sql="select count(*) from school where year='2009' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total2=$row3['count(*)'];
-        echo("2009");
-        echo($total2);
+        //echo("2009");
+        //echo($total2);
 
          $sql="select count(*) from school where year='2010' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total3=$row3['count(*)'];
-        echo("2010");
-        echo($total3);
+        //echo("2010");
+        //echo($total3);
 
          $sql="select count(*) from school where year='2011' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total4=$row3['count(*)'];
-        echo("2011");
-        echo($total4);
+        //echo("2011");
+        //echo($total4);
 
         $sql="select count(*) from school where year='2012' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total5=$row3['count(*)'];
-        echo("2012");
-        echo($total5);
+        //echo("2012");
+        //echo($total5);
 
         $sql="select count(*) from school where year='2013' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total6=$row3['count(*)'];
-        echo("2013");
-        echo($total6);
+        //echo("2013");
+        //echo($total6);
 
         $sql="select count(*) from school where year='2014' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total7=$row3['count(*)'];
-        echo("2014");
-        echo($total7);
+        //echo("2014");
+        //echo($total7);
         
         $sql="select count(*) from school where year='2015' ";
         $result=$conn->query($sql);
         $row3 = mysqli_fetch_assoc($result); //fetch first row
         $total8=$row3['count(*)'];
-        echo("2015");
-        echo($total8);
+        //echo("2015");
+        //echo($total8);
 
                 
 ?>
@@ -477,6 +604,10 @@ session_start();
              </div>
          </div>
      </div>
+     
+     <div id="map-canvas"></div>
+     
+     
     </div>
     <!-- /#wrapper -->
 

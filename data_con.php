@@ -5,7 +5,8 @@ if(!isset($_SESSION))
 } 
 
 //$servername = "ec2-54-88-189-121.compute-1.amazonaws.com";
-$servername = "ec2-52-69-94-146.ap-northeast-1.compute.amazonaws.com";
+//$servername = "ec2-52-69-94-146.ap-northeast-1.compute.amazonaws.com";
+$servername="localhost";
 $username = "root";
 $password = 'code4good';
 $dbname='impact';

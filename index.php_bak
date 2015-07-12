@@ -322,12 +322,15 @@ include('data_con.php');
             </div>
             <!-- /.row -->
         <?php
+                include ('database_connection.php');
+                echo "helllllllooo";
                 $sql="SELECT * FROM hhf";
                 $result = $conn->query($sql);
-                while($row = $result->fetch_assoc()) {
-                echo($row['region']);
+                echo ($result);
+               while($row = $result->fetch_assoc()) {
+                echo $row['region'];
                 echo('<br>');
-                echo('$row['no_of_schools']');
+                echo $row['no_of_schools'];
                 }
         ?>    
                     
