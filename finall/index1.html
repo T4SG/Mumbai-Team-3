@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+//include('header.php');
+include('data_con.php');
+?>
 <head>
 
     <meta charset="utf-8">
@@ -9,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>HHF</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,14 +21,14 @@
     <!-- MetisMenu CSS -->
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-    <!-- DataTables CSS -->
-    <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
-    <link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -36,83 +40,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<style>
-.dropdown-menu
-{
-    width:260px ;
-
-}
-.size1
-{
-    width:260px;
-}
-</style>
-
-<style type="text/css">
-.header-cont {
-    width:960px;
-    position:fixed;
-    top:60px;
-	padding-left:36px;
-}
-.header {
-    height:130px;
-    background:#F0F0F0;
-    border:1px solid #CCC;
-    width:960px;
-    margin:0px auto;
-}
-.content {
-    width:960px;
-    background: #fff;
-    border: 1px solid #CCC;
-    height: 2000px;
-    margin: 70px auto;
-}
-.content #1{
-	width:960px;
-}
-</style>
-   
-    
-<script>
-	function graph1()
-	{
-		document.getElementById('1').style.display = "block";
-		document.getElementById('2').style.display = "none";
-		document.getElementById('3').style.display = "none";	
-	}
-	function graph2()
-	{
-		document.getElementById('1').style.display = "none";
-		document.getElementById('2').style.display = "block";
-		document.getElementById('3').style.display = "none";	
-	}
-	function graph3()
-	{
-		document.getElementById('1').style.display = "none";
-		document.getElementById('2').style.display = "none";
-		document.getElementById('3').style.display = "block";	
-	}
-</script>
-
-<script type="text/javascript" src="../js/jscharts.js"></script>
-
-<script src="..\js\pie.js"></script>
-
-
 </head>
 
 <body>
 
-  <div id="wrapper">
+    <div id="wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -317,127 +249,110 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">General Metrics</h1>
+                    <h1 class="page-header">Dashboard</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-         	
-            
-            <div class="bs-example" >
-    <ul class="nav nav-pills" style="width:100%;">
-        <div class="row">
-            <div class="col-md-3">
-        <li class="dropdown">
-           <button class="size1" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"> Country <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Indonesia</a></li>
-                <li><a href="#">Haiti</a></li>
-                <li><a href="#">Thailand</a></li>
-            <!--    <li class="divider"></li>  -->
-                
-            </ul>
-        </li>
-    </div>
-    <div class="col-md-3">
-        <li class="dropdown">
-            <button class="size1" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Region <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Delmas</a></li>
-                <li><a href="#">Phang Nga</a></li>
-                <li><a href="#">Indonesia</a></li>
-            <!--    <li class="divider"></li>  -->
-               
-            </ul>
-        </li>
-    </div>
-    <div class="col-md-3">
-        <li class="dropdown">
-           <button class="size1" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"> School <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Cempaka Putih</a></li>
-                <li><a href="#">Tegal Maja</a></li>
-                <li><a href="#">Institution Scholane</a></li>
-            <!--    <li class="divider"></li>  -->
-                <li><a href="#">Chao Thai Mai</a></li>
-            </ul>
-        </li>
-    </div>
-    <div class="col-md-3">
-        <li class="dropdown">
-           <button class="size1" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"> Categories <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#" onclick="graph1()">No of Boys & Girls</a></li>
-                <li><a href="#" onclick="graph2()">No of Total Students</a></li>
-                <li><a href="#" onclick="graph3()">No of Square Metres</a></li>
-            </ul>
-        </li>
-    </div>
-</div>
-    </ul>
-   </div> 
-<!--    <div class="content">-->
-    
-    <div id="1">
-        <div class="row">
-    <div class="col-md-7">
-        
-	<div id="graph">Loading graph...
-    	
-    </div>
-
-<script type="text/javascript">
-	var myChart = new JSChart('graph', 'line');
-	myChart.setDataArray([[2, 10],[4, 20],[6, 30],[8, 45],[10, 50]], 'blue');
-	myChart.setDataArray([[2, 12],[4, 25],[6, 30],[8, 50],[10, 60]], 'green');
-	
-	myChart.setAxisPaddingBottom(40);
-	myChart.setTextPaddingBottom(10);
-	myChart.setAxisValuesNumberY(11);
-	myChart.setIntervalStartY(0);
-	myChart.setIntervalEndY(100);
-	myChart.setLabelX([2,'2007']);
-	myChart.setLabelX([4,'2008']);
-	myChart.setLabelX([6,'2009']);
-	myChart.setLabelX([8,'2010']);
-	myChart.setLabelX([10,'2011']);
-	myChart.setAxisValuesNumberX(5);
-	myChart.setShowXValues(false);
-	myChart.setTitleColor('#454545');
-	myChart.setAxisValuesColor('#454545');
-	myChart.setLineColor('#A4D314', 'green');
-	myChart.setLineColor('#BBBBBB', 'gray');
-	
-	myChart.setTooltip([2]);
-	
-	myChart.setTooltip([4]);
-	
-	myChart.setTooltip([6]);
-	
-	myChart.setTooltip([8]);
-	
-	myChart.setTooltip([10]);
-	myChart.setFlagColor('#9D16FC');
-	myChart.setFlagRadius(4);
-	myChart.setBackgroundImage('chart_bg.jpg');
-	myChart.setSize(616, 321);
-	myChart.draw();
-</script>
-
-
-</div>
-
-    <div class="col-md-5">
-        <div class="panel-body">
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
                             <div class="row">
-                                <div class="col-lg-9">
-                                    <div class="row-lg-4" >
-                                    <div class="table-responsive" style="height:270px;">
+                                <div class="col-xs-3">
+                                    <img src="http://static1.squarespace.com/static/536249cde4b0586b1fcb8778/538a149de4b0474839381362/538a1921e4b0a4356c05f491/1435500810646/World-Bank-Logo.png" style="width:75px;height:75px;">
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">9</div>
+                                    <div>Countrys!</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">47</div>
+                                    <div>Regions!</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">118</div>
+                                    <div>Schools!</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">10</div>
+                                    <div>Years!</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        <?php
+                include ('database_connection.php');
+                echo "helllllllooo";
+                $sql="SELECT * FROM hhf";
+                echo $sql;
+                $result = $conn->query($sql);
+                echo ($result);
+               while($row = $result->fetch_assoc()) {
+                echo $row['region'];
+                echo('<br>');
+                echo $row['no_of_schools'];
+                }
+        ?>    
+                    
+                      
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="table-responsive">
                                         <table class="table table-bordered table-hover table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Date</th>
-                                                    <th>Time</th>
+                                                    <th>Number of schools</th>
                                                     <th>Amount</th>
                                                 </tr>
                                             </thead>
@@ -478,67 +393,38 @@
                                                     <td>2:23 PM</td>
                                                     <td>$245.12</td>
                                                 </tr>
-                                                
+                                                <tr>
+                                                    <td>3320</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>2:15 PM</td>
+                                                    <td>$5663.54</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3319</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>2:13 PM</td>
+                                                    <td>$943.45</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     <!-- /.table-responsive -->
                                 </div>
+                                <!-- /.col-lg-4 (nested) -->
+                                <div class="col-lg-8">
+                                    <div id="morris-bar-chart"></div>
+                                </div>
+                                <!-- /.col-lg-8 (nested) -->
                             </div>
+                            <!-- /.row -->
                         </div>
+                        <!-- /.panel-body -->
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            
-              The BLUE Line gives the number of boys on yearly basis. <br>
-                 The GREEN Line gives the number of girls on yearly basis. <br><br><br>
-         </div>          
-         <!-- /.col-lg-4 (nested) -->
-<div id="2">
-
-       
-<div id="graph1">Loading graph...</div>
-
-<script type="text/javascript">
-    var myData = new Array([2005, 22], [2006, 36], [2007, 37], [2008, 45], [2009, 50], [2010, 55], [2011, 61], [2012, 61], [2013, 62], [2014, 66], [2015, 73]);
-    var myChart = new JSChart('graph1', 'line');
-    myChart.setDataArray(myData);
-    myChart.setTitle('No of students');
-    myChart.setTitleColor('#8E8E8E');
-    myChart.setTitleFontSize(11);
-    myChart.setAxisNameX('');
-    myChart.setAxisNameY('');
-    myChart.setAxisColor('#C4C4C4');
-    myChart.setAxisValuesColor('#343434');
-    myChart.setAxisPaddingLeft(100);
-    myChart.setAxisPaddingRight(120);
-    myChart.setAxisPaddingTop(50);
-    myChart.setAxisPaddingBottom(40);
-    myChart.setAxisValuesNumberX(6);
-    myChart.setGraphExtend(true);
-    myChart.setGridColor('#c2c2c2');
-    myChart.setLineWidth(6);
-    myChart.setLineColor('#9F0505');
-    myChart.setSize(616, 321);
-    myChart.setBackgroundImage('chart_bg.jpg');
-    myChart.draw();
-</script>
-</div>
-</div>
-<div id="3" >
-    <div id="morris-bar-chart"></div>
-   
-
-</div>
-    
-    
-  <!--  </div>-->
-   
-            
-            
-       
+                 </div>
+             </div>
+         </div>
+     </div>
+    </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -550,26 +436,14 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="../bower_components/raphael/raphael-min.js"></script>
     <script src="../bower_components/morrisjs/morris.min.js"></script>
     <script src="../js/try.js"></script>
 
-<script type="text/javascript" src="../js/jscharts.js"></script>
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
-    </script>
-    
-  
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
 
 </body>
 
